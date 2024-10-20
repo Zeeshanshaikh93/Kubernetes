@@ -6,7 +6,7 @@ metadata:
 spec:
  containers:
   - name: app
-    iamge: nginx:1.27
+    image: nginx:1.27
   - name: db
     image: alpine
     args: 
