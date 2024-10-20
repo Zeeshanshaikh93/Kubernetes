@@ -1,0 +1,14 @@
+---
+apiVersion: v1 
+kind: Pod
+metadata:
+ name: activity2
+spec:
+ containers:
+  - name: app
+    iamge: nginx:1.27
+  - name: db
+    image: alpine
+    args: 
+    - sleep
+    - 1d
