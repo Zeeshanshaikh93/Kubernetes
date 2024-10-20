@@ -4,7 +4,7 @@ kind: Pod
 metadata:
  name: activity3
 spec:
- container: 
+ containers: 
   - name: Web
     image: alpine
     args:
