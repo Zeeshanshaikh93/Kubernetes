@@ -12,7 +12,7 @@ spec:
     args:
     - sleep
     - 10s
- initcontainers:
+ initContainers:
   - name: webinit1
     image: alpine
     args:
