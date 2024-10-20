@@ -1,0 +1,25 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+ name: act4
+spec:
+ containers: 
+  - name: thor
+    image: alpine
+  - name: sucide
+    image: nginx:1.27
+    args:
+    - sleep
+    - 10s
+ initcontainers:
+  - name: webinit1
+    image: alpine
+    args:
+       - sleep
+       - 10s
+  - name: webinit2
+    image: alpine
+    args:
+       - sleep
+       - 10s     
