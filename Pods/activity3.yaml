@@ -5,7 +5,7 @@ metadata:
  name: activity3
 spec:
  containers: 
-  - name: Web
+  - name: thor
     image: alpine
     args:
     - sleep
