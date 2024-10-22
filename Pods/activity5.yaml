@@ -2,16 +2,8 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: activity5
+  name: my-pod
 spec:
   containers:
-    - name: test
-      image: alpine
-      args:
-        - sleep
-        - 1d
-      env:
-        - name: USERNAME
-          value: admin
-        - name: PASSWORD
-          value: admin@123
+    - name: my-container
+      image: busybox
