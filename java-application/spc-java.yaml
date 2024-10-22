@@ -7,7 +7,7 @@ metadata:
   env: dev
   app: spc
 containers:
- - name: spc-pod
+ - name: spcpod
    image: shaikkhajaibrahim/spcjan2024:1.0
    ports: 
     - containerPort: 8080
