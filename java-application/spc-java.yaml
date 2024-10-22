@@ -6,9 +6,10 @@ metadata:
  labels:
   env: dev
   app: spc
-containers:
- - name: spcpod
-   image: shaikkhajaibrahim/spcjan2024:1.0
-   ports: 
-    - containerPort: 8080
-      protocol: TCP
+spec:
+ containers:
+  - name: spcpod
+    image: shaikkhajaibrahim/spcjan2024:1.0
+    ports: 
+     - containerPort: 8080
+       protocol: TCP
