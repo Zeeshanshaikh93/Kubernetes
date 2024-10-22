@@ -11,7 +11,7 @@ spec:
     image: nginx:1.27
     args:
     - sleep
-    - 10s
+    - 1d
  initContainers:
   - name: webinit1
     image: alpine
