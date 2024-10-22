@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Pod 
 metadata: 
-  name: app
+  name: activity5
 spec: 
   containers:
     - name: webimage
@@ -14,4 +14,4 @@ spec:
        - name: USERNAME
          value: ZeeshanAhmed
        - name: PASSWORD
-         value: zeeshan799351
+         value: zeeshan@799351
