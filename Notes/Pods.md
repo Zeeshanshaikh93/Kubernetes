@@ -18,3 +18,18 @@
 * It is of are two types 
   * requests # lower limits
   * limits # Upper limits 
+
+###### Replica Sets
+* ReplicaSets are a vital component for managing the availability and scaling of applications within a Kubernetes cluster. 
+## Purpose of Replica sets:
+ * Maintain Desired State: A ReplicaSet ensures that a specified number of identical Pods are running at all times. If any Pod fails or is terminated, the ReplicaSet automatically creates new Pods to replace them, maintaining the desired count.
+ * Load Balancing: With multiple Pods running, incoming traffic can be distributed among them, preventing any single Pod from becoming overwhelmed.
+ * Scaling: ReplicaSets allow for easy scaling of applications. You can increase or decrease the number of replicas based on demand using simple commands, enabling dynamic resource management. It enhances the self-healing which monitor the ReplicaSets.
+ * Integration with Deployments: While you can create ReplicaSets directly, they are often managed through Deployments, which provide additional features like rolling updates and rollback capabilities, making application management more straightforward
+
+###### Service 
+* Kubernetes Services are crucial for ensuring reliable communication, load balancing, and accessibility of applications within a cluster, making them foundational for building scalable and resilient microservices architectures.
+* It usually exposes all these 
+    * ClusterIP: Exposes the Service on a cluster-internal IP, allowing communication between Pods.
+    * NodePort: Exposes the Service on each Node’s IP at a static port, enabling external access.
+    * LoadBalancer: Creates an external load balancer in supported cloud environments to distribute traffic to the Service

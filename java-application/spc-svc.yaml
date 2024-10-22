@@ -1,0 +1,16 @@
+---
+apiVersion: v1 
+kind: Endpoints
+metadata: 
+  name: spc-svc
+  labels:
+    app: springpetclinic
+spec:
+  type: Port
+  selector:
+    env: dev
+    app: spc
+    ports:
+    - port: 8080
+      targetPort: 8080 
+   

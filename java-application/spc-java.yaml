@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Pod
 metadata: 
- name: spc
+ name: springpetclinic
  labels:
   env: dev
   app: spc
@@ -14,7 +14,7 @@ spec:
       requests: # Lower Limits
         memory: "64Mi"
         cpu: "250m"
-      limits:
+      limits: # Upper Limits
         memory: "256Mi"
         cpu: "500m"
     ports: 
