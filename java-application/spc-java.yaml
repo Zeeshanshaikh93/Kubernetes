@@ -10,5 +10,5 @@ containers:
  - name: spc-pod
    image: shaikkhajaibrahim/spcjan2024:1.0
    ports: 
-    containersport: 80
-    protocol: tcp
+    - containerport: 80
+      protocol: tcp
