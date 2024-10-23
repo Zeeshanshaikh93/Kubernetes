@@ -33,3 +33,6 @@
     * ClusterIP: Exposes the Service on a cluster-internal IP, allowing communication between Pods.
     * NodePort: Exposes the Service on each Node’s IP at a static port, enabling external access.
     * LoadBalancer: Creates an external load balancer in supported cloud environments to distribute traffic to the Service
+
+* Therefore code is present in the my repo, following image shows the Service application has worked successfully,                       
+   ![Preview](k8s1.png)
