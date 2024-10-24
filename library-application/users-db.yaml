@@ -44,8 +44,8 @@ spec:
  type: clusterIP
  selector:  
   db: users
- ports: 
+ ports:
   - port: 5432
-    targetport: 5432
+    targetPort: 5432
        
 
