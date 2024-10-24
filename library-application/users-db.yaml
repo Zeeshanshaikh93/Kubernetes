@@ -41,7 +41,7 @@ kind: Service
 metadata:
  name: users-db
 spec:
- type: clusterIP
+ type: ClusterIP
  selector:  
   db: users
  ports:
