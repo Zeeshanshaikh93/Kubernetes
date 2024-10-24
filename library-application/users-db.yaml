@@ -6,7 +6,7 @@ metadata:
   labels:
    app: user
 spec: 
-  minReadySeconds: 10
+  minReadySeconds: 5
   replicas: 1
   selector:
    matchLabels: 
@@ -33,7 +33,7 @@ spec:
         limits:
          memory: 128M
          cpu: 500m
-       port:
+       ports:
         - containerPort: 5432
 ---
 apiVersion: v1 
