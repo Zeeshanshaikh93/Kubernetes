@@ -40,7 +40,7 @@ metadata:
 spec:
  type: ClusterIP
  selector:  
-  db: books-svc
+  app: books-svc
  ports:
   - port: 8000
     targetPort: 8000
