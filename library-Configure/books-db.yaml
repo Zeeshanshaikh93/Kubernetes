@@ -19,15 +19,9 @@ spec:
     containers: 
      - name: books-db
        image: postgres:15-alpine
-        #env: 
-        #- name: POSTGRES_USER
-        # value: books
-        #- name: POSTGRES_PASSWORD
-        # value: password
-        #- name: POSTGRES_DB
-        # value: booksdb
        envFrom:
-         - name: books-db-config
+         - configMapRef:
+              name: books-db-config
        resources:
         requests:
          memory: 24M

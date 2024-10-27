@@ -1,8 +1,10 @@
 ---
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata: 
  name: users-svc-rs
+ annotations:
+    kubernetes.io/change-cause: "version v1.0"
 spec:
  minReadySeconds: 10
  replicas: 1
@@ -17,14 +19,9 @@ spec:
    containers: 
     - name: users-service
       image: shaikkhajaibrahim/libbookssvc:1.0
-      #env:
-      # - name: DATABASE_URL
-      #  value: "postgresql://users:password@users-db:5432/usersdb"
-      # - name: SECRET_KEY
-      #  value: "YtDEVWnL35aAIP-5yxeLjAZ49R920-mMNDfwPyWULu63HFsYzo0f-LO2InxC8eu428k"
       envFrom:
         - configMapRef: 
-          name: users-svc-config
+            name: users-svc-config
       resources:
         requests:
          memory: 24M
