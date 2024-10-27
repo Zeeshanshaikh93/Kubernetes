@@ -2,26 +2,29 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata: 
- name: users-svc-rs
+ name: books-svc-rs
 spec:
  minReadySeconds: 10
  replicas: 1
  selector:
   matchLabels: 
-   app: users-svc
+   app: books-svc
  template:
   metadata:
    labels: 
-    app: users-svc
+    app: books-svc
   spec:
    containers: 
-    - name: users-service
+    - name: books-serice
       image: shaikkhajaibrahim/libbookssvc:1.0
-      env:
-       - name: DATABASE_URL
-         value: "postgresql://users:password@users-db:5432/usersdb"
-       - name: SECRET_KEY
-         value: "YtDEVWnL35aAIP-5yxeLjAZ49R920-mMNDfwPyWULu63HFsYzo0f-LO2InxC8eu428k"
+      #env:
+      #- name: DATABASE_URL
+      # value: "postgresql://user:password@books-db:5432/booksdb"
+      #- name: SECRET_KEY
+      # value: "YtDEVWnL35aAIP-5yxeLjAZ49R920-mMNDfwPyWULu63HFsYzo0f-LO2InxC8eu428k"
+      envFrom:
+        - configMapRef:
+          name: books-svc-config
       resources:
         requests:
          memory: 24M
@@ -36,14 +39,11 @@ spec:
 apiVersion: v1 
 kind: Service
 metadata:
- name: users-svc
+ name: books-svc
 spec:
  type: ClusterIP
  selector:  
-  app: users-svc
+  app: books-svc
  ports:
   - port: 8000
     targetPort: 8000
-  
-
-    

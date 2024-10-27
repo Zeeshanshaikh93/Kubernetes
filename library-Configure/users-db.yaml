@@ -19,13 +19,16 @@ spec:
     containers: 
      - name: users-db
        image: postgres:15-alpine
-       env: 
-        - name: POSTGRES_USER
-          value: users
-        - name: POSTGRES_PASSWORD
-          value: password
-        - name: POSTGRES_DB
-          value: usersdb
+       #env: 
+       # - name: POSTGRES_USER
+       #   value: users
+       #- name: POSTGRES_PASSWORD
+       #  value: password
+       #- name: POSTGRES_DB
+       #  value: usersdb
+       envFrom:
+        - configMapRef:
+          name: users-db-config
        resources:
         requests:
          memory: 24M

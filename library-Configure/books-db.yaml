@@ -2,30 +2,32 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata: 
-  name: users-db
+  name: books-db
   labels:
-   app: users
+   app: books
 spec: 
   minReadySeconds: 5
   replicas: 1
   selector:
    matchLabels: 
-    db: users
+    db: books
   template:
    metadata:
     labels: 
-     db: users
+     db: books
    spec: 
     containers: 
-     - name: users-db
+     - name: books-db
        image: postgres:15-alpine
-       env: 
-        - name: POSTGRES_USER
-          value: users
-        - name: POSTGRES_PASSWORD
-          value: password
-        - name: POSTGRES_DB
-          value: usersdb
+        #env: 
+        #- name: POSTGRES_USER
+        # value: books
+        #- name: POSTGRES_PASSWORD
+        # value: password
+        #- name: POSTGRES_DB
+        # value: booksdb
+       envFrom:
+         - name: books-db-config
        resources:
         requests:
          memory: 24M
@@ -39,13 +41,11 @@ spec:
 apiVersion: v1 
 kind: Service
 metadata:
- name: users-db
+ name: books-db
 spec:
  type: ClusterIP
  selector:  
-  db: users
+  db: books
  ports:
   - port: 5432
     targetPort: 5432
-       
-
