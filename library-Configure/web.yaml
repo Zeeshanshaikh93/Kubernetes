@@ -1,7 +1,8 @@
+---
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata: 
-  name: libwebstore-rs
+  name: libstoreweb-config
   labels:
     app: webstore
 spec:
