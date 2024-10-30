@@ -23,7 +23,8 @@ spec:
         #- configMapRef:
         #   name: books-svc-config
       envFrom:
-        - secretRef: books-svc-secrets
+        - secretRef: 
+            name: books-svc-secrets
       resources:
         requests:
          memory: 24M

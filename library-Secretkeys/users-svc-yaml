@@ -23,7 +23,8 @@ spec:
        # - configMapRef: 
        #    name: users-svc-config
       envFrom: 
-        - secretRef: users-svc-secrets
+        - secretRef: 
+            name: users-svc-secrets
       resources:
         requests:
          memory: 24M

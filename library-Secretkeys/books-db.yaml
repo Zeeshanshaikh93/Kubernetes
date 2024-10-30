@@ -23,7 +23,8 @@ spec:
         # - configMapRef:
         #      name: books-db-config
        envFrom:
-         - secretRef: books-db-secrets
+         - secretRef: 
+            name: books-db-secrets
        resources:
         requests:
          memory: 24M
