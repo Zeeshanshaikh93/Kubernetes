@@ -35,13 +35,15 @@
     * LoadBalancer: Creates an external load balancer in supported cloud environments to distribute traffic to the Service
 
 * Therefore code is present in the my repo, following image shows the Service application has worked successfully,                       
-   ![Preview](k8s1.png)
-
+ ![Preview](images/k8s1.png)
 ### Deployments:
 
 ### Annotations:
 
-### Config-Maps:
+### Config-Maps: 
 
 ### Secret keys:
 
+![alt text](images/k8s2.png)
+### Health Checks/Probes:
+  
