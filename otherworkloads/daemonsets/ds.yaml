@@ -12,11 +12,11 @@ spec:
       metadata:
         labels:
           app: agent
-    spec:
-      containers:
-        - name: logagent
-          image: fluent/fluentd:edge-debian
-          resources: 
+      spec:
+        containers:
+         - name: logagent
+           image: fluent/fluentd:edge-debian
+           resources: 
             requests:
               memory: "64Mi"
               cpu: "200m"
