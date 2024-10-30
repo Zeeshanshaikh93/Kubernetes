@@ -45,5 +45,11 @@
 ### Secret keys:
 
 ![alt text](images/k8s2.png)
-### Health Checks/Probes:
+### Health Checks/Probes: 
+* Kubernetes health checks are essential for maintaining application stability and performance by providing early detection of issues, ensuring only ready instances serve traffic, and optimizing resource management within the cluster.
+* There are three types of Probes 
+   * Liveness Probes: These determine if a container is running. If a liveness probe fails, Kubernetes will restart the container.
+   * Readiness Probes: These check if a container is ready to handle requests. If a readiness probe fails, Kubernetes will stop sending traffic to that container until it is ready again.
+   * Startup Probes: These are used to check if an application has started successfully, allowing for longer initialization times without affecting the overall health checks.
+* It basically, ensures that only healthy instances serve traffic. 
   
