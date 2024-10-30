@@ -9,6 +9,10 @@ spec:
     matchLabels: 
       app: agent
     template:
+      metadata:
+        labels:
+          app: agent
+    spec:
       containers:
         - name: logagent
           image: fluent/fluentd:edge-debian
