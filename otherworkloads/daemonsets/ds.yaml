@@ -23,7 +23,7 @@ spec:
             limits:
               memory: "128Mi"
               cpu: "300m"
-          ports:
+           ports:
             - containerPort: 9800
               name: fluentd  
   
