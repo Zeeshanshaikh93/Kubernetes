@@ -71,6 +71,5 @@
 
 * DaemonSets are a specialized type of workload controller that ensure a specific Pod runs on all or selected nodes within a cluster.
 * This feature is particularly useful for deploying background services that need to operate on every node, such as monitoring agents, logging services, or network proxies.
-*Simple Example*
-
+ **Simple Example**
 * Imagine you have a team of workers (nodes) in an office (cluster). A DaemonSet is like assigning a task (running a Pod) to each worker so that they all do it at the same time. If you hire a new worker, they automatically get assigned the same task without you having to tell them.
