@@ -39,9 +39,9 @@
 
 ### Deployments:
 
-#### Annotations:
+### Annotations:
 
-##### Config-Maps:
+### Config-Maps:
 
-###### Secret keys:
+### Secret keys:
 
