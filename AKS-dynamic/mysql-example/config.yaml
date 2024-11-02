@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata: 
+  name: mysql
+data: 
+  MYSQL_DATABASE: greek
+  MYSQL_ROOT_PASSWORD: greek1234
+  MYSQL_USER: Zeeshanshaikh
+  MYSQL_PASSWORD: zeeshan@1234

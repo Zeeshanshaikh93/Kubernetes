@@ -71,5 +71,26 @@
 
 * DaemonSets are a specialized type of workload controller that ensure a specific Pod runs on all or selected nodes within a cluster.
 * This feature is particularly useful for deploying background services that need to operate on every node, such as monitoring agents, logging services, or network proxies.
- **Simple Example** :
-* Imagine you have a team of workers (nodes) in an office (cluster). A DaemonSet is like assigning a task (running a Pod) to each worker so that they all do it at the same time. If you hire a new worker, they automatically get assigned the same task without you having to tell them.
+* **Example**: Imagine you have a team of workers (nodes) in an office (cluster). A DaemonSet is like assigning a task (running a Pod) to each worker so that they all do it at the same time. If you hire a new worker, they automatically get assigned the same task without you having to tell them.
+
+### CronJobs
+
+* Kubernetes CronJobs provide an efficient way to manage scheduled tasks in a containerized environment, making them essential for automating routine operations within your applications.
+  * **Example**: Imagine you have a task to send out a report every day at 8 AM. Instead of remembering to do it yourself, you set up a CronJob that automatically sends the report at that time every day.
+
+### Namespaces
+
+### Kubernetes Storage
+
+* What is a Persistent Volume (PV)?
+  * A Persistent Volume (PV) is like a storage unit in your Kubernetes environment. It represents a piece of storage that has been set up and is available for use, such as a disk or file system.
+* What is a Persistent Volume Claim (PVC)?
+  * A Persistent Volume Claim (PVC) is a request made by a user or application for a specific amount of storage from the available PVs. Think of it as saying, "I need this much space to store my data."
+* How do they work together?
+  * When an application needs storage, it creates a PVC specifying how much space it needs and how it wants to access that storage (like read/write permissions). Kubernetes then looks for an available PV that meets these requirements and binds the PVC to that PV.
+  * This binding means that the application can now use the storage defined in the PV through its PVC, ensuring that even if the application restarts or fails, it can still access its data.
+* It willbe running on AKS cluster or EBS or on-prem, etc..
+* After writing the yaml file, while executing the file we can store our data using, "mysql databse"
+* ![alt text](images/k8s3.png)
+* ![alt text](images/k8s4.png)
+* ![alt text](images/k8s5.png)

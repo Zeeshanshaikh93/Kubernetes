@@ -25,4 +25,4 @@ spec:
               cpu: "300m"
           ports:
             - containerPort: 9800
-              name: fluentd  
+              name: fluentd
