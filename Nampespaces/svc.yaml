@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: nginx-service
+  Namespace: qa
+spec:
+  type: ClusterIP
+  selector:
+    app: nginx
+  ports: 
+    - port: 8000
+      targetPort: 8000
+      protocol: TCP
+    
