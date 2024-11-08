@@ -70,7 +70,7 @@
 ### Daemon Sets
 
 * DaemonSets are a specialized type of workload controller that ensure a specific Pod runs on all or selected nodes within a cluster.
-* This feature is particularly useful for deploying background services that need to operate on every node, such as monitoring agents, logging services, or network proxies.
+* This feature is particularly useful for deploying background services that need to operate on every node, such as monitoring agents, logging services, or network proxies. Kubelet is basically a DaemonSets.
 * **Example**: Imagine you have a team of workers (nodes) in an office (cluster). A DaemonSet is like assigning a task (running a Pod) to each worker so that they all do it at the same time. If you hire a new worker, they automatically get assigned the same task without you having to tell them.
 
 ### CronJobs
@@ -78,7 +78,7 @@
 * Kubernetes CronJobs provide an efficient way to manage scheduled tasks in a containerized environment, making them essential for automating routine operations within your applications.
   * **Example**: Imagine you have a task to send out a report every day at 8 AM. Instead of remembering to do it yourself, you set up a CronJob that automatically sends the report at that time every day.
 
-### Namespaces 
+### Namespaces
 
 * Namespaces are a fundamental feature that allows for the organization and management of resources within a single cluster. They provide a mechanism to create virtual clusters, enabling better resource allocation, access control, and isolation among different teams or projects.
 
