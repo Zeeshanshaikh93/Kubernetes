@@ -20,7 +20,7 @@ spec:
           image: postgres:15-alpine
           envFrom:
             - secretRef: 
-              name: books-db-secrets
+              name: books-svc-secrets
           resources:
             requests:
              memory: 64M
