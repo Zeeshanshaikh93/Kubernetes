@@ -34,19 +34,30 @@ spec:
            - name: users-db-vol
              mountPath: /var/lib/postgresql/data
              subPath: data
+  volumeClaimTemplates:
+    - metadata:
+        name: users-db-vol
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        storageClassName: managed
+        resources:
+          requests:
+            storage: 1Gi
+    
 
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: users-db-vol
-spec:
-  accessModes:
-    - ReadWriteOnce
-  storageClassName: managed
-  resources:
-    requests:
-      storage: 1Gi
+#---
+#apiVersion: v1
+#kind: PersistentVolumeClaim
+#metadata:
+#  name: users-db-vol
+#spec:
+#  accessModes:
+#    - ReadWriteOnce
+#  storageClassName: managed
+#  resources:
+#    requests:
+#      storage: 1Gi
 
 ---
 apiVersion: v1
