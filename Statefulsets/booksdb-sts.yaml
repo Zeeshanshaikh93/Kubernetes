@@ -42,7 +42,7 @@ metadata:
   name: books-db-vol
 spec:
   accessModes:
-    - Readwriteonce
+    - ReadWriteOnce
   storageClassName: managed
   resources:
     requests:
