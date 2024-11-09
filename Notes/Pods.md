@@ -97,7 +97,7 @@
  ![alt text](images/k8s4.png)
  ![alt text](images/k8s5.png)
 
-#### STATEFUL SETS ####
+# STATEFUL SETS
 
 * A StatefulSet is essential for managing applications that require stable identities and persistent storage, allowing Kubernetes to handle complex workloads with specific ordering and identity requirements effectively.
 * Stateful sets create multiple pods with a predicatable name in a sequential order (0 to n)
