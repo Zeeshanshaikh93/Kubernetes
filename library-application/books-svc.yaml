@@ -15,7 +15,7 @@ spec:
     app: books-svc
   spec:
    containers: 
-    - name: books-serice
+    - name: books-service
       image: shaikkhajaibrahim/libbookssvc:1.0
       env:
        - name: DATABASE_URL
