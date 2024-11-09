@@ -15,7 +15,6 @@ spec:
       labels: 
         app: usersdb
     spec:
-      automountServiceAccountToken: "false"
       containers:
         - name: usersdb
           image: postgres:15-alpine

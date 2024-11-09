@@ -15,7 +15,6 @@ spec:
       labels: 
         app: booksdb
     spec:
-      automountServiceAccountToken: "false"
       containers:
         - name: booksdb
           image: postgres:15-alpine
