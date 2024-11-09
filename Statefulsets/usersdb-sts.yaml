@@ -20,7 +20,7 @@ spec:
           image: postgres:15-alpine
           envFrom:
             - secretRef: 
-              name: users-svc-secrets
+                name: users-svc-secrets
           resources:
             requests:
              memory: 64M
