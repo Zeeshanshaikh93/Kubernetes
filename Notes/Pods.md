@@ -93,6 +93,15 @@
   * This binding means that the application can now use the storage defined in the PV through its PVC, ensuring that even if the application restarts or fails, it can still access its data.
 * It willbe running on AKS cluster or EBS or on-prem, etc..
 * After writing the yaml file, while executing the file we can store our data using, "mysql databse"
-* ![alt text](images/k8s3.png)
-* ![alt text](images/k8s4.png)
-* ![alt text](images/k8s5.png)
+ ![alt text](images/k8s3.png)
+ ![alt text](images/k8s4.png)
+ ![alt text](images/k8s5.png)
+
+#### STATEFUL SETS ####
+
+* A StatefulSet is essential for managing applications that require stable identities and persistent storage, allowing Kubernetes to handle complex workloads with specific ordering and identity requirements effectively.
+* Stateful sets create multiple pods with a predicatable name in a sequential order (0 to n)
+* Rolling updates will be performed in a reverse order (n-0)
+* Each Pod will raise a PVC to get a PV
+* Generally we will have a headless service to access specific pod
+* Statefulsets are widely used to create database clusters and any  application with state.
