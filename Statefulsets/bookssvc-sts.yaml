@@ -55,7 +55,7 @@ spec:
   type: ClusterIP
   clusterIP: None
   selector:
-    app: books-svc
+    app: books-service
   ports:
   - port: 8000
     targetPort: 8000
