@@ -5,7 +5,7 @@ metadata:
   labels:
     app: webstore
 spec:
-  serviceName: "web-svc" 
+  serviceName: web-svc
   replicas: 1
   selector:
     matchLabels:
