@@ -1,0 +1,32 @@
+# ---
+# apiVersion: v1
+# kind: ConfigMap
+# metadata: 
+#   name: books-db-config
+# data:
+#   POSTGRES_USER: user
+#   POSTGRES_PASSWORD: password
+#   POSTGRES_DB: booksdb
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: books-db-secrets
+data:
+  POSTGRES_USER: dXNlcg==
+  POSTGRES_PASSWORD: cGFzc3dvcmQ=
+  POSTGRES_DB: Ym9va3NkYg==
+
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: books-svc-config
+data:
+  DATABASE_URL: "postgresql://user:password@booksdb-svc:5432/booksdb"
+  SECRET_KEY: "YtDEVWnL35aAIP-5yxeLjAZ49R920-mMNDfwPyWULu63HFsYzo0f-LO2InxC8eu428k"
+
+
+

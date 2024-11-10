@@ -1,0 +1,51 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: users-db
+spec:
+  minReadySeconds: 0
+  replicas: 1
+  revisionHistoryLimit: 5
+  selector: 
+    matchLabels:
+      app: usersdb
+  strategy:
+    rollingUpdate:
+      maxSurge: 20%
+      maxUnavailable: 20%
+  template: 
+    metadata:
+      labels:
+        app: usersdb
+    spec:
+      containers:
+        - name: users-db
+          image: postgres:15-alpine
+          envFrom: 
+            - secretRef:
+                name: users-db-secrets
+          resources:
+            requests: 
+              memory: "50Mi"
+              cpu: "100m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 5432
+              protocol: TCP
+
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: usersdb-svc
+spec: 
+  type: ClusterIP
+  ports: 
+    - port: 5432
+      targetPort: 5432
+  selector: 
+    app: usersdb
+      

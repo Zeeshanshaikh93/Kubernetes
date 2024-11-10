@@ -1,0 +1,9 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: library-frontend-configmap
+data:
+  REACT_APP_BACKEND_API_URL: http://:8000/api/v1
+  REACT_APP_BOOKS_API_URL: http://:8000/api/v1/books
+  REACT_APP_USERS_API_URL: http://:8000/api/v1/users
