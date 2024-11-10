@@ -41,6 +41,7 @@ spec:
           spec:
             accessModes: 
               - ReadWriteOnce
+            storageClassName: managed  
             resources:
               requests:
                 storage: 1Gi
