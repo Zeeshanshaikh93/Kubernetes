@@ -6,7 +6,7 @@ metadata:
   annotations:
     kubernetes.io/change-cause: "version v1.0"
 spec:
-  serviceName: "books-svc"
+  serviceName: books-svc
   replicas: 1
   selector:
     matchLabels:
@@ -31,6 +31,20 @@ spec:
                 name: books-svc-secrets
           ports:
           - containerPort: 8000
+          volumeMounts:
+            - name: books-storage-vol
+              mountPath: /var/lib/postgresql/data
+              subPath: data
+      volumeClaimTemplates:
+        - metadata:
+            name: users-storage-vol
+          spec:
+            accessModes: 
+              - ReadWriteOnce
+            resources:
+              requests:
+                storage: 1Gi        
+
 ---
 apiVersion: v1
 kind: Service

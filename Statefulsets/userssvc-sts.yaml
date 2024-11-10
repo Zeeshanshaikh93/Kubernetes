@@ -31,6 +31,19 @@ spec:
                 name: users-svc-secrets
           ports:
           - containerPort: 8000
+          volumeMounts:
+            - name: users-storage-vol
+              mountPath: /var/lib/postgresql/data
+              subPath: data
+      volumeClaimTemplates:
+        - metadata:
+            name: users-storage-vol
+          spec:
+            accessModes: 
+              - ReadWriteOnce
+            resources:
+              requests:
+                storage: 1Gi
 ---
 apiVersion: v1
 kind: Service
