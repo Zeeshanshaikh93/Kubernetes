@@ -31,9 +31,9 @@ spec:
           ports:
            - containerPort: 5432
           volumeMounts:
-           - name: books-db-vol
-             mountPath: /var/lib/postgresql/data
-             subPath: data
+            - name: books-db-vol
+              mountPath: /var/lib/postgresql/data
+              subPath: data
   volumeClaimTemplates:
     - metadata:
         name: books-db-vol
