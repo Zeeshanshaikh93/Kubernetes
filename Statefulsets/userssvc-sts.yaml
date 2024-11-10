@@ -21,8 +21,8 @@ spec:
           image: shaikkhajaibrahim/libuserssvc:1.0
           resources:
             requests:
-              memory: 24M
-              cpu: 100m
+              memory: 64Mi
+              cpu: 200m
             limits:
               memory: 128M
               cpu: 500m
@@ -36,15 +36,15 @@ spec:
               mountPath: /var/lib/postgresql/data
               subPath: data
   volumeClaimTemplates:
-        - metadata:
-            name: users-storage-vol
-          spec:
-            accessModes: 
-              - ReadWriteOnce
-            storageClassName: managed  
-            resources:
-              requests:
-                storage: 1Gi    
+    - metadata:
+        name: users-storage-vol
+      spec:
+        accessModes: 
+           - ReadWriteOnce
+        storageClassName: managed  
+        resources:
+          requests:
+            storage: 1Gi    
 ---
 apiVersion: v1
 kind: Service
