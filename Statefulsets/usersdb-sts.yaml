@@ -34,7 +34,7 @@ spec:
            - name: users-db-vol
              mountPath: /var/lib/postgresql/data
              subPath: data
-      volumeClaimTemplates:
+  volumeClaimTemplates:
         - metadata:
             name: users-db-vol
           spec:
@@ -43,7 +43,7 @@ spec:
            storageClassName: managed
            resources:
              requests:
-               storage: 1Gi  
+               storage: 1Gi    
     
 
 #---

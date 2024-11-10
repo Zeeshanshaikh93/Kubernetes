@@ -35,7 +35,7 @@ spec:
             - name: books-storage-vol
               mountPath: /var/lib/postgresql/data
               subPath: data
-      volumeClaimTemplates:
+  volumeClaimTemplates:
         - metadata:
             name: users-storage-vol
           spec:
@@ -44,7 +44,7 @@ spec:
             storageClassName: managed  
             resources:
               requests:
-                storage: 1Gi        
+                storage: 1Gi            
 
 ---
 apiVersion: v1
