@@ -43,7 +43,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: webstore 
+    app: web-container 
   ports:
     - port: 80
       targetPort: 3000
