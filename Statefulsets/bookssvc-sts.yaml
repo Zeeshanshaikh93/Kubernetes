@@ -53,6 +53,7 @@ metadata:
   name: books-svc
 spec:
   type: ClusterIP
+  clusterIP: None
   selector:
     app: books-svc
   ports:
