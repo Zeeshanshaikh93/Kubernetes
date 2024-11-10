@@ -1,3 +1,66 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: users-service
+  annotations:
+    kubernetes.io/change-cause: version v1.0
+spec:
+  serviceName: users-service
+  replicas: 1
+  selector:
+    matchLabels:
+      app: users-svc
+  template:
+    metadata:
+      labels:
+        app: users-svc
+    spec:
+      containers:
+        - name: users-service
+          image: shaikkhajaibrahim/libuserssvc:1.0
+          resources:
+            requests:
+              memory: 64Mi
+              cpu: 200m
+            limits:
+              memory: 128M
+              cpu: 500m
+          envFrom:
+            - secretRef:
+                name: users-svc-secrets
+          ports:
+          - containerPort: 8000
+          volumeMounts:
+            - name: users-storage-vol
+              mountPath: /var/lib/postgresql/data
+              subPath: data
+  volumeClaimTemplates:
+    - metadata:
+        name: users-storage-vol
+      spec:
+        accessModes: 
+           - ReadWriteOnce
+        storageClassName: managed  
+        resources:
+          requests:
+            storage: 1Gi    
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: users-service
+spec:
+  type: ClusterIP
+  clusterIP: None
+  selector:
+    app: users-service
+  ports:
+  - port: 8000
+    targetPort: 8000
+
+
+
 # ---
 # apiVersion: apps/v1
 # kind: StatefulSet
@@ -24,7 +87,7 @@
 #               memory: 64Mi
 #               cpu: 200m
 #             limits:
-#               memory: 128M
+#               memory: 128Mi
 #               cpu: 500m
 #           envFrom:
 #             - secretRef:
@@ -54,70 +117,7 @@
 #   type: ClusterIP
 #   clusterIP: None
 #   selector:
-#     app: users-service
+#     app: users-svc
 #   ports:
 #   - port: 8000
 #     targetPort: 8000
-
-
-
----
-apiVersion: apps/v1
-kind: StatefulSet
-metadata:
-  name: users-service
-  annotations:
-    kubernetes.io/change-cause: version v1.0
-spec:
-  serviceName: users-svc
-  replicas: 1
-  selector:
-    matchLabels:
-      app: users-svc
-  template:
-    metadata:
-      labels:
-        app: users-svc
-    spec:
-      containers:
-        - name: users-service
-          image: shaikkhajaibrahim/libuserssvc:1.0
-          resources:
-            requests:
-              memory: 64Mi
-              cpu: 200m
-            limits:
-              memory: 128Mi
-              cpu: 500m
-          envFrom:
-            - secretRef:
-                name: users-svc-secrets
-          ports:
-          - containerPort: 8000
-          volumeMounts:
-            - name: users-storage-vol
-              mountPath: /var/lib/postgresql/data
-              subPath: data
-  volumeClaimTemplates:
-    - metadata:
-        name: users-storage-vol
-      spec:
-        accessModes: 
-           - ReadWriteOnce
-        storageClassName: managed  
-        resources:
-          requests:
-            storage: 1Gi    
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: users-svc
-spec:
-  type: ClusterIP
-  clusterIP: None
-  selector:
-    app: users-svc
-  ports:
-  - port: 8000
-    targetPort: 8000

@@ -6,7 +6,7 @@ metadata:
   annotations:
     kubernetes.io/change-cause: "version v1.0"
 spec:
-  serviceName: books-svc
+  serviceName: books-service
   replicas: 1
   selector:
     matchLabels:
@@ -50,7 +50,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: books-svc
+  name: books-service
 spec:
   type: ClusterIP
   clusterIP: None
