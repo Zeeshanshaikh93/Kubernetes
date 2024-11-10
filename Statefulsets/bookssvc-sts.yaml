@@ -7,7 +7,7 @@ metadata:
     kubernetes.io/change-cause: "version v1.0"
 spec:
   serviceName: "books-svc"
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: books-svc
