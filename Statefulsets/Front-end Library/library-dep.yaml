@@ -7,7 +7,6 @@ metadata:
     app: library
 spec:
   minReadySeconds: 5
-  
   replicas: 3
   selector:
     matchLabels:
@@ -16,7 +15,7 @@ spec:
     type: Recreate
   template:
     metadata:
-      name: lib-fe
+      name: library-ends
       labels:
         app: library
     spec:
