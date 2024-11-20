@@ -126,3 +126,13 @@
 Consider a restaurant with multiple dining rooms (services) serving different cuisines (applications). Instead of having separate entrances for each dining room, the restaurant has a single main entrance (ingress controller) where customers arrive.
 At this entrance, there is a host (the ingress controller) who checks reservations (routing rules) and directs customers to the appropriate dining room based on their preferences (requests). This setup allows for efficient management of customer flow, ensuring that each dining room operates smoothly without overcrowding or confusion.
 Just as the host ensures that customers reach their desired dining experience, the ingress controller ensures that incoming traffic is directed to the correct service within the Kubernetes cluster, providing a streamlined and organized approach to managing external access.
+* After writing the code, the below images are accessed via ingress controllers via *NGINX ingress controller* on K8s AKS Cluster, for accessing NGINX ingress controller we have to download below link on AKS cluster.
+
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.3.0/deploy/static/provider/cloud/deploy.yaml
+```
+
+![Preview](images/k8s7.png)
+![Preview](images/k8s8.png)
+
+* With this we have managed to control in incoming traffic with same IP address via different external access to services within a cluster.
