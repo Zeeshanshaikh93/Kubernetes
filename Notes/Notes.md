@@ -106,3 +106,6 @@
 * Generally we will have a headless service to access specific pod
 * Statefulsets are widely used to create database clusters and any  application with state.
 * psql database log in ![Preview](images/k8s6.png)
+
+* *MYSQL* database execution commands
+![Preview](images/sql.jpg)
