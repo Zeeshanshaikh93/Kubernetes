@@ -113,3 +113,8 @@
 ## Scheduling Pods on Nodes
 
 * In Kubernetes, scheduling pods on nodes refers to the process of assigning newly created pods to specific nodes within a cluster based on    various criteria and constraints. This task is primarily managed by the kube-scheduler, which evaluates available nodes to determine the most suitable one for each pod.
+
+## Stateless applications
+
+* Stateless refers to applications and services that do not maintain any internal state between requests. This means that each request from a client is treated as an independent transaction, and this application does not store any data.
+* for managing this we can use Deployments as a part of it, it also allows to define the desired state of your application, including the number of replicas, and handle updates seamlessly without downtime. 
