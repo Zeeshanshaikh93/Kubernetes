@@ -109,3 +109,7 @@
 
 * *MYSQL* database execution commands
 ![Preview](images/sql.jpg)
+
+## Scheduling Pods on Nodes
+
+* In Kubernetes, scheduling pods on nodes refers to the process of assigning newly created pods to specific nodes within a cluster based on    various criteria and constraints. This task is primarily managed by the kube-scheduler, which evaluates available nodes to determine the most suitable one for each pod.
