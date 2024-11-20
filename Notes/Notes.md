@@ -117,4 +117,12 @@
 ## Stateless applications
 
 * Stateless refers to applications and services that do not maintain any internal state between requests. This means that each request from a client is treated as an independent transaction, and this application does not store any data.
-* for managing this we can use Deployments as a part of it, it also allows to define the desired state of your application, including the number of replicas, and handle updates seamlessly without downtime. 
+* for managing this we can use Deployments as a part of it, it also allows to define the desired state of your application, including the number of replicas, and handle updates seamlessly without downtime.
+
+## Ingress controllers
+
+* An ingress controller in Kubernetes acts as a gateway that manages external access to services within a cluster. It functions by routing incoming HTTP and HTTPS traffic based on defined rules, enabling users to access applications hosted in the cluster without exposing each service directly to the internet.
+* *Daily Life Example* ;
+Consider a restaurant with multiple dining rooms (services) serving different cuisines (applications). Instead of having separate entrances for each dining room, the restaurant has a single main entrance (ingress controller) where customers arrive.
+At this entrance, there is a host (the ingress controller) who checks reservations (routing rules) and directs customers to the appropriate dining room based on their preferences (requests). This setup allows for efficient management of customer flow, ensuring that each dining room operates smoothly without overcrowding or confusion.
+Just as the host ensures that customers reach their desired dining experience, the ingress controller ensures that incoming traffic is directed to the correct service within the Kubernetes cluster, providing a streamlined and organized approach to managing external access.
