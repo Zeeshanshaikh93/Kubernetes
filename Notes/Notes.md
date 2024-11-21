@@ -130,9 +130,30 @@ Just as the host ensures that customers reach their desired dining experience, t
 
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.3.0/deploy/static/provider/cloud/deploy.yaml
+kubectl create namespace ingress-nginx
+kubectl get ingress
 ```
 
 ![Preview](images/k8s7.png)
 ![Preview](images/k8s8.png)
 
 * With this we have managed to control in incoming traffic with same IP address via different external access to services within a cluster.
+
+## Kubernetes Metrics Service
+
+* The Kubernetes Metrics Server is an essential component designed to monitor resource metrics within a Kubernetes cluster. It plays a crucial role in enabling efficient autoscaling by collecting and exposing metrics related to CPU and memory usage for both nodes and pods.
+* It also provides necessary metrics for HPA & VPA.
+
+## Horizontal pod auto scaler
+
+* The Horizontal Pod Autoscaler (HPA) in Kubernetes is a feature that automatically adjusts the number of pod replicas in a deployment, stateful set, or replication controller based on observed metrics such as CPU and memory usage.
+
+## Vertical pod auto scaler
+
+* The Vertical Pod Autoscaler (VPA) is a Kubernetes component designed to automatically adjust the resource requests and limits (CPU and memory) for containers running in Pods.
+* Difference b/w HPA & VPA
+  ![Preview](images/k8s9.png)
+
+## Network Policy
+
+* Kubernetes Network Policies are essential for securing communication between pods within a cluster. They allow developers to define specific rules for incoming and outgoing traffic, reducing the risk of unauthorized access and enhancing the overall security posture of applications running in Kubernetes environments.
