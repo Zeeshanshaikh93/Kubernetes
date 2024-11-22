@@ -1,0 +1,23 @@
+---
+namespace: dev
+replicas: 3
+images:
+  name: "nginx"
+  tag: "1.27"
+resources:
+  requests:
+    memory: "64Mi"
+    cpu: "100m"
+  limits:
+    memory: "128Mi"
+    cpu: "500m"
+selector:
+  app: nginx
+metadata:
+  app: nginx
+ports:
+  containerPort: 80
+metadata:
+  name: nginx
+containers:
+  name: nginx
