@@ -41,7 +41,7 @@ kind: Service
 metadata: 
   name: web-svc
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: web
   ports:
